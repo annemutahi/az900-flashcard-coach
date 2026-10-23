@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AZ-900 Flashcard Coach (Unofficial)</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div><h1>AZ-900 Flashcard Coach</h1><p>Cards you keep missing come back sooner.</p></div>
+  <span class="tag">Unofficial</span>
+</header>
+<main>
+<section id="home">
+  <div class="stats"><div><b id="sDue">0</b>due now</div><div><b id="sMas">0</b>mastered</div><div><b id="sTr">0</b>trouble cards</div></div>
+  <div class="ctl">
+    <label>Topic <select id="dom"></select></label>
+    <button class="pri" onclick="start('due')">Study due cards</button>
+    <button onclick="start('weak')">Fix my weak spots</button>
+  </div>
+  <p id="note" role="status"></p>
+  <div id="bars"></div>
+  <h2>Trouble cards</h2>
+  <ul id="tl"></ul>
+  <p><button class="link" onclick="resetAll()">Reset progress</button></p>
+</section>
+<section id="study" hidden>
+  <div class="prog"><span id="pg"></span><button class="link" onclick="goHome()">End session</button></div>
+  <div class="card" id="card" role="button" tabindex="0" aria-label="Flashcard. Press space to flip." onclick="flip()">
+    <div class="in">
+      <div class="f"><small id="dn"></small><p id="q"></p><em>Tap or press Space to flip</em></div>
+      <div class="f back"><small>Answer</small><p id="a"></p><p class="x" id="x"></p></div>
+    </div>
+  </div>
+  <div class="rate" id="rate">
+    <button data-r="0">Again<small>key 1</small></button>
+    <button data-r="1">Hard<small>key 2</small></button>
+    <button data-r="2">Good<small>key 3</small></button>
+    <button data-r="3">Easy<small>key 4</small></button>
+  </div>
+</section>
+<section id="done" hidden><div class="sum" id="sum"></div></section>
+</main>
+<footer>
+  <p><b>Unofficial study tool.</b> Not affiliated with, endorsed by, or sponsored by Microsoft. All cards are original and written in our own words; no real exam questions. Always check the <a href="https://learn.microsoft.com/en-us/credentials/certifications/azure-fundamentals/" target="_blank" rel="noopener">official skills outline on Microsoft Learn</a>. Built for the #1MillionDevs Vibe Coding Hackathon.</p>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>
